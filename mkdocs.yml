@@ -1,0 +1,4 @@
+site_name: ParaView for High Energy Physics
+pages:
+- Home: 'index.md'
+theme: readthedocs
