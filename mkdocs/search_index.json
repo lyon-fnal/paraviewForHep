@@ -9,6 +9,56 @@
             "location": "/#paraview-for-high-energy-physics", 
             "text": "A guide for using ParaView in High Energy Physics", 
             "title": "ParaView for High Energy Physics"
+        }, 
+        {
+            "location": "/intro/intro/", 
+            "text": "What is ParaView?\n\n\n(Adam Lyon, October 2015, ParaView 4.4)\n\n\n\n\n\n\nWhat is ParaView?\n\n\nObtaining ParaView\n\n\nLearning ParaView\n\n\nManual\n\n\nTutorials\n\n\n\n\n\n\n\n\n\n\nParaView\n is a 3D visualization application based on the \nVTK\n (Visualization Toolkit) library. To me, its important features are:\n\n\n\n\nBased on experience and research from the Computer Science Visualization community.\n\n\nExtremely responsive scene manipulation (rotate, pan, zoom). \n\n\nVery easy to overlay data from multiple sources (and apply transformations if necessary). \n\n\nMany tools for visualization of scalar and vector fields (using, among other techniques, arrow glyphs, streamlines, heat maps, volume rendering).\n\n\nEasy slicing, cutting, and applying thresholds.\n\n\nAnimation.\n\n\n2D plots made from aspects of the 3D data.\n\n\nDeep python integration, including writing your own pipeline sources and filters as well as scripting the application\n\n\n\n\nParaView is mainly authored and maintained by \nKitware\n, a company committed to open source platforms. \n\n\nObtaining ParaView\n\n\nWrite this\n\n\nLearning ParaView\n\n\nParaView is a very capable and somewhat complicated application with a learning curve. There are, however, many resources for learning the system. \n\n\nManual\n\n\nThe most important documentation from Kitware is the ParaView Guide in PDF or print form. The guide is the main manual for ParaView. A free community edition is available from \nhttp://www.paraview.org/paraview-guide/\n. There is also a print version that contains several more examples and use cases (the Fermilab library has a \ncopy\n). Certainly you should download and skim the manual, but it may be easier to start learning from a tutorial. \n\n\nTutorials\n\n\nKitware has an official tutorial at \nhttp://www.paraview.org/Wiki/The_ParaView_Tutorial\n. PDF of the tutorial document and links to the necessary data files are on that page. This tutorial is quite well written and extensive. It is a good place to start.\n\n\nKitware has a wealth of information on its \nWiki\n, about both \nParaView\n and \nVTK\n.\n\n\nAn excellent tutorial explaining how to handle scalar and vector fields in the context of climate science is at \nhttps://www.dkrz.de/Nutzerportal-en/doku/vis/sw/paraview\n. Download the PDF and the data needed fro the tutorial. The web site can be quite slow and the data download is very large. If you have trouble downloading the materials, let Adam know and he can send you his copy. \n\n\nA more simple tutorial is from Boston University at \nhttp://www.bu.edu/tech/support/research/training-consulting/online-tutorials/paraview/\n. It is based on a rather old version of ParaView, but it is still relevant. They also have a tutorial on VTK itself \n\n\nA good university course with a wealth of online material is at \nhttp://cs.unc.edu/~taylorr/Comp715/\n. Of special interest are a \ntutorial on animation\n and a course \nschedule\n that contains many links to resources explaining visualization concepts. \n\n\nThe US Department of Defense has a large amount of information at \nhttp://daac.hpc.mil/software/ParaView/\n. \n\n\nFinally, the visualization group at the Argonne Leadership Computing Facility as a very good tutorial at \nhttps://www.alcf.anl.gov/user-guides/vis-paraview-red-blood-cell-tutorial\n creating a complicated pipeline in ParaView.", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/intro/intro/#what-is-paraview", 
+            "text": "(Adam Lyon, October 2015, ParaView 4.4)    What is ParaView?  Obtaining ParaView  Learning ParaView  Manual  Tutorials      ParaView  is a 3D visualization application based on the  VTK  (Visualization Toolkit) library. To me, its important features are:   Based on experience and research from the Computer Science Visualization community.  Extremely responsive scene manipulation (rotate, pan, zoom).   Very easy to overlay data from multiple sources (and apply transformations if necessary).   Many tools for visualization of scalar and vector fields (using, among other techniques, arrow glyphs, streamlines, heat maps, volume rendering).  Easy slicing, cutting, and applying thresholds.  Animation.  2D plots made from aspects of the 3D data.  Deep python integration, including writing your own pipeline sources and filters as well as scripting the application   ParaView is mainly authored and maintained by  Kitware , a company committed to open source platforms.", 
+            "title": "What is ParaView?"
+        }, 
+        {
+            "location": "/intro/intro/#obtaining-paraview", 
+            "text": "Write this", 
+            "title": "Obtaining ParaView"
+        }, 
+        {
+            "location": "/intro/intro/#learning-paraview", 
+            "text": "ParaView is a very capable and somewhat complicated application with a learning curve. There are, however, many resources for learning the system.", 
+            "title": "Learning ParaView"
+        }, 
+        {
+            "location": "/intro/intro/#manual", 
+            "text": "The most important documentation from Kitware is the ParaView Guide in PDF or print form. The guide is the main manual for ParaView. A free community edition is available from  http://www.paraview.org/paraview-guide/ . There is also a print version that contains several more examples and use cases (the Fermilab library has a  copy ). Certainly you should download and skim the manual, but it may be easier to start learning from a tutorial.", 
+            "title": "Manual"
+        }, 
+        {
+            "location": "/intro/intro/#tutorials", 
+            "text": "Kitware has an official tutorial at  http://www.paraview.org/Wiki/The_ParaView_Tutorial . PDF of the tutorial document and links to the necessary data files are on that page. This tutorial is quite well written and extensive. It is a good place to start.  Kitware has a wealth of information on its  Wiki , about both  ParaView  and  VTK .  An excellent tutorial explaining how to handle scalar and vector fields in the context of climate science is at  https://www.dkrz.de/Nutzerportal-en/doku/vis/sw/paraview . Download the PDF and the data needed fro the tutorial. The web site can be quite slow and the data download is very large. If you have trouble downloading the materials, let Adam know and he can send you his copy.   A more simple tutorial is from Boston University at  http://www.bu.edu/tech/support/research/training-consulting/online-tutorials/paraview/ . It is based on a rather old version of ParaView, but it is still relevant. They also have a tutorial on VTK itself   A good university course with a wealth of online material is at  http://cs.unc.edu/~taylorr/Comp715/ . Of special interest are a  tutorial on animation  and a course  schedule  that contains many links to resources explaining visualization concepts.   The US Department of Defense has a large amount of information at  http://daac.hpc.mil/software/ParaView/ .   Finally, the visualization group at the Argonne Leadership Computing Facility as a very good tutorial at  https://www.alcf.anl.gov/user-guides/vis-paraview-red-blood-cell-tutorial  creating a complicated pipeline in ParaView.", 
+            "title": "Tutorials"
+        }, 
+        {
+            "location": "/about/license/", 
+            "text": "License", 
+            "title": "License"
+        }, 
+        {
+            "location": "/about/license/#license", 
+            "text": "", 
+            "title": "License"
+        }, 
+        {
+            "location": "/about/contributing/", 
+            "text": "How to contribute", 
+            "title": "How to contribute"
+        }, 
+        {
+            "location": "/about/contributing/#how-to-contribute", 
+            "text": "", 
+            "title": "How to contribute"
         }
     ]
 }
