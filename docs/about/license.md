@@ -1,5 +1,7 @@
 # License
 
+**This document/site is covered by the following license:**
+
 Fermilab Software Legal Information (BSD License)
 Copyright (c) 2009-2014, FERMI NATIONAL ACCELERATOR LABORATORY
 All rights reserved.
