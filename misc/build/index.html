@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://lyon-fnal.github.io/paraviewForHep/misc/build/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+	<title>Building from source - ParaView for High Energy Physics</title>
+
+        <link href="../../css/bootstrap-3.0.3.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">ParaView for High Energy Physics</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../..">Home</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Introduction <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../intro/whatsthis/">What is this document</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../intro/intro/">What is ParaView</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Miscellaneous <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li class="active">
+                            <a href="./">Building from source</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../pvospray/">pvOSPRay</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../about/license/">License</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li >
+                    <a rel="next" href="../../intro/intro/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../pvospray/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/lyon-fnal/paraviewForHep">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#building-from-source">Building from source</a></li>
+        
+            <li><a href="#obtaining-paraview-source">Obtaining ParaView Source</a></li>
+        
+            <li><a href="#installing-qt">Installing Qt</a></li>
+        
+            <li><a href="#building-mpi">Building MPI</a></li>
+        
+            <li><a href="#downloading-and-building-cmake">Downloading and building cmake</a></li>
+        
+            <li><a href="#building-paraview">Building ParaView</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="building-from-source">Building from source</h1>
+<p>(Adam Lyon, October 2015, ParaView 4.4)</p>
+<p>While binaries of the ParaView application are available at [http://www.paraview.org]
+(http://www.paraview.org), you may find that you need to build ParaView from source yourself. A build from source will be required if you want to have a special non-default build option turned on or off, build against a different Open MPI library, or want the latest changes in ParaView from git. Otherwise, you should definitely use the pre-compiled binaries as described in <a href="../../intro/intro/#obtaining-paraview">Obtaining ParaView</a>.</p>
+<h2 id="obtaining-paraview-source">Obtaining ParaView Source</h2>
+<p>See <a href="https://gitlab.kitware.com/paraview/paraview/blob/master/Documentation/dev/git/download.md">https://gitlab.kitware.com/paraview/paraview/blob/master/Documentation/dev/git/download.md</a> for information on how to <code>git clone</code> the ParaView repository. A summary is,</p>
+<pre><code class="bash">cd /path/to/development/paraview
+git clone --recursive https://gitlab.kitware.com/paraview/paraview.git ParaView
+# Your source code will be in /path/to/development/paraview/ParaView
+</code></pre>
+
+<p>If you need to update the repository (e.g. pull), then do</p>
+<pre><code class="bash">cd /path/to/development/paraview/ParaView
+git pull
+git submodule update --init
+</code></pre>
+
+<h2 id="installing-qt">Installing Qt</h2>
+<p>You need to install Qt v4 (4.7.0 or later, but not v5) on your system. See <a href="http://download.qt.io/archive/qt/4.8/4.8.6/">http://download.qt.io/archive/qt/4.8/4.8.6/</a>. ParaView will be able to find it. </p>
+<h2 id="building-mpi">Building MPI</h2>
+<p>You will also need an installation of MPI. There are many MPI implementations. I typically use <em>Open MPI</em>, see <a href="http://www.open-mpi.org/">http://www.open-mpi.org/</a>. If you are on a machine with infiniband interconnects, you may want to use the <a href="http://www.mpich.org/">MPICH</a> implementation. Here's how I download and build Open MPI (using openmpi-1.10.0) on my Mac.</p>
+<pre><code class="bash">cd /path/to/development/paraview
+curl -O http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.0.tar.gz
+tar xvzf openmpi-1.10.0.tar.gz  # Makes openmpi-1.10.0 directory
+cd openmpi-1.10.0
+
+./configure --prefix=/path/to/development/paraview/openmpi
+make install -j 4  # build with 4 cpus
+
+# Open MPI is installed in /path/to/development/paraview/openmpi
+</code></pre>
+
+<p>Remember the location of the installation directory. You will need it if you ever run <code>mpiexec</code> or similar. </p>
+<h2 id="downloading-and-building-cmake">Downloading and building cmake</h2>
+<p>You need a late verison of <code>cmake</code> to build ParaView. See <a href="https://cmake.org/download/">https://cmake.org/download/</a> to download it (note that <code>cmake</code> is written by Kitware too!). Download the file appropriate for your platform. For example, on my Mac I do,</p>
+<pre><code class="bash">cd /path/to/development/paraview
+curl -O https://cmake.org/files/v3.4/cmake-3.4.0-rc1-Darwin-x86_64.tar.gz
+tar xvzf cmake-3.4.0-rc1-Darwin-x86_64.tar.gov
+</code></pre>
+
+<p>For the Mac, this tar file has the necessary binary. For another platform, you may need to build form source. See the <code>cmake</code> instructions. </p>
+<h2 id="building-paraview">Building ParaView</h2>
+<p>We should now have the necessary pieces to build ParaView. Note that if you want to make animation files directly in ParaView, you need to have <code>ffmpeg</code> installed in your system. You should probably have <code>ffmpeg</code> installed anyway, because the movie files produced by ParaView may need re-encoding to display properly in HTML5 or your on iPad. </p>
+<p><code>cmake</code> likes "out of source" builds, so we make a build directory.</p>
+<pre><code class="bash">cd /path/to/development/paraview
+mkdir build
+cd build
+</code></pre>
+
+<p>Now we run <code>cmake</code> with necessary options. If you are building on Linux, then the <code>cmake</code> path in the example below will be different. It is handy to set an environment variable with the location of your built MPI libraries. Note that if you used an MPI implementation other than <em>Open MPI</em>, then the library names may be different (e.g. <code>mpi_cxx</code> may be <code>mpicxx</code>). Also, on Linux change <code>.dylib</code> to <code>.so</code>. Lastly, I build using my Mac's system <code>python</code>. </p>
+<p>If you are on  Mac, the application will eventually (after <code>make install</code>) be installed in <code>/Applications/paraview.app</code> (it will not work if installed elsewhere). On Linux, the default installation will be <code>/usr/local</code>. To change that, below set <code>-DCMAKE_INSTALL_PREFIX=/path/to/paraview</code>. </p>
+<pre><code class="bash"># In the build directory
+export MYBASE=/path/to/development/paraview # Replace with your location
+export MYMPI=$MYBASE/openmpi  # Replace with your MPI installation directory 
+
+../cmake-3.4.0-rc1-Darwin-x86_64/CMake.app/Contents/bin/cmake \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DBUILD_TESTING=OFF \
+    -DPARAVIEW_USE_MPI=ON \
+    -DMPI_C_LIBRARIES=&quot;$MYMPI/lib/libmpi.dylib;$MYMPI/lib/libmpi_cxx.dylib&quot; \
+    -DMPI_C_INCLUDE_PATH=&quot;$MYMPI/include&quot; \
+    -DMPI_CXX_INCLUDE_PATH=&quot;$MYMPI/include&quot; \
+    -DMPI_C_COMPILER=&quot;$MYMPI/bin/mpicc&quot; \
+    -DMPI_CXX_COMPILER=&quot;$MYMPI/bin/mpicxx&quot; \
+    -DMPIEXEC=&quot;$MYMPI/bin/mpiexec&quot; \
+    -DPARAVIEW_BUILD_PLUGIN_GMVReader=OFF \
+    -DPARAVIEW_BUILD_PLUGIN_ForceTime=ON \
+    -DPARAVIEW_BUILD_PLUGIN_TemporalParallelismScriptGenerator=ON \
+    -DPARAVIEW_BUILD_CATALYST_ADAPTORS=ON \
+    -DPARAVIEW_ENABLE_PYTHON=ON \
+    -DPYTHON_INCLUDE_DIR=/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 \
+    -DPYTHON_EXECUTABLE=/usr/bin/python \
+    ../ParaView/
+</code></pre>
+
+<p>If you wanted to build so that ParaView uses OpenGL2 (faster, but buggy), then add <code>-DVTK_RENDERING_BACKEND=OpenGL2 \</code>. </p>
+<p>Note that <code>-DBUILD_TESTING</code> is set to <code>OFF</code>. Turning it on will cause the build to download a large number of small files from Kitware. Turning it off makes the build much faster and you can build without a network connection.</p>
+<p>Now build and install,</p>
+<pre><code class="bash">make -j 4
+make install
+</code></pre>
+
+<p>And it's done. </p></div>
+        </div>
+
+	<footer class="col-md-12">
+		<hr>
+		
+		<center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+	</footer>
+
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+    </body>
+</html>

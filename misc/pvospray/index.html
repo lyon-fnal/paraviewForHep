@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://lyon-fnal.github.io/paraviewForHep/misc/pvospray/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+	<title>pvOSPRay - ParaView for High Energy Physics</title>
+
+        <link href="../../css/bootstrap-3.0.3.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">ParaView for High Energy Physics</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../..">Home</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Introduction <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../intro/whatsthis/">What is this document</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../intro/intro/">What is ParaView</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Miscellaneous <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../build/">Building from source</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="./">pvOSPRay</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../about/license/">License</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li >
+                    <a rel="next" href="../build/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../../about/license/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/lyon-fnal/paraviewForHep">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#pvospray">pvOSPRay</a></li>
+        
+            <li><a href="#building">Building</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="pvospray">pvOSPRay</h1>
+<p>(Adam Lyon, October 2015, ParaView 4.4)</p>
+<p>NOTE - This does not work yet. See <a href="https://github.com/TACC/pvOSPRay/issues/24">my bug report</a>. [Still does not build - working on it]</p>
+<p><code>pvOSPRay</code> is a ParaView plugin that uses the Intel OSPRay ray tracing framework. See <a href="http://tacc.github.io/pvOSPRay/index.html">http://tacc.github.io/pvOSPRay/index.html</a>. OSPRay is supposed to be a performant and enhanced volume rendering system. It seems to make very pretty pictures. Let's try it!</p>
+<h2 id="building">Building</h2>
+<p>See <a href="http://tacc.github.io/pvOSPRay/getting_pvospray.html#source">their instructions</a> for reference to build from source. We will follow them in this section here to build it ourselves. </p>
+<p>We need to download and build <a href="https://ospray.github.io/">OSPRay</a> first. See OSPray build <a href="http://ospray.github.io/getting_ospray.html">instructions</a> for reference. We will be using the same build infrastructure we made in our <a href="../build/">ParaView build instructions</a>. So go to your <code>/path/to/development/paraview</code> directory where you have <code>ParaView</code>, <code>MPI</code>, and <code>cmake</code> ready to go and that the <code>MYBASE</code> and <code>MYMPI</code> environment variables are set as per those instructions. You do not need to have ParaView built, just checked out. MPI should be built and installed. You also need to have Qt installed on your system. </p>
+<p>Get the OSPray source (note that we're changing their instructions a little to make building pvOSPRay easier),</p>
+<pre><code class="bash">cd $MYBASE
+git clone https://github.com/ospray/ospray.git OSPRay
+</code></pre>
+
+<p>We need the <a href="http://ispc.github.io/">Intel SPMD compiler</a> (ISPC). We'll <a href="http://ispc.github.io/downloads.html">get</a> the Mac binary (not the AVX-512 variant - as far as I know the Mac CPU doesn't support that set of advanced vector extensions - though there is a Mac version of the code). </p>
+<p>The download is from Sourceforge, so hard to script. Just download it and move it to the right place. Or this <a href="http://downloads.sourceforge.net/project/ispcmirror/v1.8.2/ispc-v1.8.2-osx.tar.gz?r=http%3A%2F%2Fispc.github.io%2Fdownloads.html&amp;ts=1445008175&amp;use_mirror=iweb">direct link</a> may work. Unpack the tar file in a sibling directory to OSPray. That is <code>/path/to/development/paraview</code> so that you have <code>/path/to/development/paraview/ispc-v1.8.2-osx</code> (or the directory appropriate for your platform and desired version). </p>
+<p>Now follow the build instructions,</p>
+<pre><code class="bash">cd $MYBASE
+cd OSPRay
+mkdir build
+cd build
+../../cmake-3.4.0-rc1-Darwin-x86_64/CMake.app/Contents/bin/cmake \
+   -DCMAKE_BUILD_TYPE=Release \
+   -DOSPRAY_BUILD_MPI_DEVICE=ON \
+   -DMPI_C_LIBRARIES=&quot;$MYMPI/lib/libmpi.dylib;$MYMPI/lib/libmpi_cxx.dylib&quot; \
+   -DMPI_C_INCLUDE_PATH=&quot;$MYMPI/include&quot; \
+   -DMPI_CXX_INCLUDE_PATH=&quot;$MYMPI/include&quot; \
+   -DMPI_C_COMPILER=&quot;$MYMPI/bin/mpicc&quot; \
+   -DMPI_CXX_COMPILER=&quot;$MYMPI/bin/mpicxx&quot; \
+   -DMPIEXEC=&quot;$MYMPI/bin/mpiexec&quot; \
+   ..
+make -j 4
+# We won't make install
+</code></pre>
+
+<p>Try playing with some of the <a href="http://ospray.github.io/demos.html">examples</a>. </p>
+<p>Now we go back to <code>pvOSPRay</code> installation.  We apparently alter some of the ParaView source.</p>
+<pre><code class="bash">cd /path/to/development/paraview
+cd ParaView/Plugins
+git clone https://github.com/TACC/pvOSPRay.git
+cd ../../build
+# If there's stuff in build, delete everything there
+</code></pre>
+
+<p>Now we run cmake as <a href="../build/">instructed</a> for building ParaView, but add the following to the list of flags (before the last line of the <code>cmake</code> command) </p>
+<pre><code class="bash">    -DPARAVIEW_BUILD_PLUGIN_pvOSPRay=ON  \
+</code></pre>
+
+<p>Note that checking out and building to the <code>OSPRay</code> directory makes the build much easier. </p>
+<p>Follow the rest of the build steps. </p>
+<p>Alas, the build doesn't work with ParaView 4.4. See <a href="https://github.com/TACC/pvOSPRay/issues/24">my bug report</a>. </p></div>
+        </div>
+
+	<footer class="col-md-12">
+		<hr>
+		
+		<center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+	</footer>
+
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+    </body>
+</html>

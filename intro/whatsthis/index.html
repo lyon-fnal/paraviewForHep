@@ -6,10 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://lyon-fnal.github.io/paraviewForHep/about/license/">
+        <link rel="canonical" href="http://lyon-fnal.github.io/paraviewForHep/intro/whatsthis/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>License - ParaView for High Energy Physics</title>
+	<title>What is this document - ParaView for High Energy Physics</title>
 
         <link href="../../css/bootstrap-3.0.3.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -56,16 +56,16 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Introduction <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
-                        <li >
-                            <a href="../../intro/whatsthis/">What is this document</a>
+                        <li class="active">
+                            <a href="./">What is this document</a>
                         </li>
                     
                         <li >
-                            <a href="../../intro/intro/">What is ParaView</a>
+                            <a href="../intro/">What is ParaView</a>
                         </li>
                     
                     </ul>
@@ -90,12 +90,12 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
-                        <li class="active">
-                            <a href="./">License</a>
+                        <li >
+                            <a href="../../about/license/">License</a>
                         </li>
                     
                     </ul>
@@ -107,12 +107,12 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 <li >
-                    <a rel="next" href="../../misc/pvospray/">
+                    <a rel="next" href="../..">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
-                <li class="disabled">
-                    <a rel="prev" >
+                <li >
+                    <a rel="prev" href="../intro/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -135,22 +135,41 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#license">License</a></li>
+        <li class="main active"><a href="#whats-all-this">What's all this?</a></li>
+        
+            <li><a href="#how-to-contribute">How to contribute</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="license">License</h1>
-<p>Fermilab Software Legal Information (BSD License)
-Copyright (c) 2009-2014, FERMI NATIONAL ACCELERATOR LABORATORY
-All rights reserved.</p>
-<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
-<p>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</p>
-<p>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</p>
-<p>Neither the name of the FERMI NATIONAL ACCELERATOR LABORATORY, nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</p>
-<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p></div>
+<h1 id="whats-all-this">What's all this?</h1>
+<p>(Adam Lyon, October 2015)</p>
+<p>The intention of this site/document it to kick-start use of ParaView in High Energy Physics. ParaView is not well known in the HEP community and much of the existing documentation, though very useful, is not geared for HEP use cases. I hope that others, with the help of information here, can get started in ParaView as quickly as possible. </p>
+<h2 id="how-to-contribute">How to contribute</h2>
+<p>This site/document is put together with the <a href="http://www.mkdocs.org/">MkDocs</a> system and written in <a href="https://daringfireball.net/projects/markdown/syntax">MarkDown</a>. MarkDown is a text based markup language that is heavily used and quite easy. </p>
+<p>I hope that others will contribute information that is relevant to the ParaView HEP community in this document. </p>
+<p>If you want to contribute, look at the source in <a href="https://github.com/lyon-fnal/paraviewForHep">GitHub</a>, especially under the <code>docs</code> directory. If you have a Mac, the open-source <a href="http://macdown.uranusjr.com/">MacDown</a> program is especially nice for writing MarkDown (it shows you a continuously updated preview of your work). There is a newer program called <a href="http://25.io/mou/">Mou</a> that looks very nice. It is in beta and I think will cost money when they have a first release. I use <code>MacDown</code>. </p>
+<p>The <code>mkdocs.yml</code> file describes the structure of the site/document. Feel free to add stuff where you see fit.</p>
+<p>If you change a file or add a new one, I would appreciate it if you could add your name to the author list (usually at the top of the file or the main heading), add the date (month &amp; year are fine), and the version of ParaView or other programs that you are using. See examples throughout the documentation here.  </p>
+<h3 id="releasing-your-changes">Releasing your changes</h3>
+<p>Right now I control the releases of this documentation and it lives under my github account. If it becomes more popular and there are others who want to manage it, I'd be happy to move it to a community site (maybe something under the HEP Software Foundation). But for now, you need to talk to me. </p>
+<p>You have three options for making your changes available. </p>
+<ol>
+<li>
+<p>Open a <a href="https://github.com/lyon-fnal/paraviewForHep/issues">New Issue</a> and attach the files you've changed. I will incorporate them.</p>
+</li>
+<li>
+<p>Gain access to the Github repository and make the changes yourself. Open a <a href="https://github.com/lyon-fnal/paraviewForHep/issues">New Issue</a> and ask that I add you to the list of contributors. </p>
+</li>
+<li>
+<p>Do it the "Github way", which is you fork the <a href="https://github.com/lyon-fnal/paraviewForHep">repository</a>, make your changes, and issue a pull request to me.</p>
+</li>
+</ol>
+<p>Option 3 is the best. You don't need <code>MkDocs</code> to edit or add text, but it comes in handy if you want to preview your work (and you don't use something like <code>MacDown</code>). </p>
+<h3 id="watching-for-new-updates">Watching for new updates</h3>
+<p>You can "watch" the <a href="https://github.com/lyon-fnal/paraviewForHep">repository</a> from your GitHub account. From your profile, you can specify how you want to be notified if there are updates. </p></div>
         </div>
 
 	<footer class="col-md-12">
