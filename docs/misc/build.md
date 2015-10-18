@@ -2,8 +2,7 @@
 
 (Adam Lyon, October 2015, ParaView 4.4)
 
-While binaries of the ParaView application are available at [http://www.paraview.org]
-(http://www.paraview.org), you may find that you need to build ParaView from source yourself. A build from source will be required if you want to have a special non-default build option turned on or off, build against a different Open MPI library, or want the latest changes in ParaView from git. Otherwise, you should definitely use the pre-compiled binaries as described in [Obtaining ParaView](../intro/intro.md#obtaining-paraview).
+While binaries of the ParaView application are available at [http://www.paraview.org](http://www.paraview.org), you may find that you need to build ParaView from source yourself. A build from source will be required if you want to have a special non-default build option turned on or off, build against a different Open MPI library, or want the latest changes in ParaView from git. Otherwise, you should definitely use the pre-compiled binaries as described in [Obtaining ParaView](../intro/intro.md#obtaining-paraview).
 
 ## Obtaining ParaView Source
 
