@@ -1,0 +1,4 @@
+#!/bin/bash
+# This needs more work!
+cd docs
+pandoc -N index.md intro/whatsthis.md intro/intro.md misc/build.md misc/pvOSPRay.md about/license.md -o ../docs.pdf
