@@ -3,10 +3,14 @@ site_description: A guide for using ParaView in High Energy Physics
 site_url: http://lyon-fnal.github.io/paraviewForHep/
 repo_url: https://github.com/lyon-fnal/paraviewForHep
 repo_name: GitHub
-theme: readthedocs
+theme: bootstrap
 pages:
 - Home: 'index.md'
-- Introduction: intro/intro.md
+- Introduction:
+   - What is this document: intro/whatsthis.md 
+   - What is ParaView: intro/intro.md
+- Miscellaneous:
+   - Building from source: misc/build.md
+   - pvOSPRay: misc/pvospray.md
 - About:
    - License: about/license.md
-   - How to contribute: about/contributing.md
