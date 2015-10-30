@@ -146,7 +146,6 @@
 
 <h1 id="pvospray">pvOSPRay</h1>
 <p>(Adam Lyon, October 2015, ParaView 4.4)</p>
-<p>NOTE - This does not work yet. See <a href="https://github.com/TACC/pvOSPRay/issues/24">my bug report</a>. [Still does not build - working on it]</p>
 <p><code>pvOSPRay</code> is a ParaView plugin that uses the Intel OSPRay ray tracing framework. See <a href="http://tacc.github.io/pvOSPRay/index.html">http://tacc.github.io/pvOSPRay/index.html</a>. OSPRay is supposed to be a performant and enhanced volume rendering system. It seems to make very pretty pictures. Let's try it!</p>
 <h2 id="building">Building</h2>
 <p>See <a href="http://tacc.github.io/pvOSPRay/getting_pvospray.html#source">their instructions</a> for reference to build from source. We will follow them in this section here to build it ourselves. </p>
@@ -154,6 +153,7 @@
 <p>Get the OSPray source (note that we're changing their instructions a little to make building pvOSPRay easier),</p>
 <pre><code class="bash">cd $MYBASE
 git clone https://github.com/ospray/ospray.git OSPRay
+git checkout devel  # Need latest from devel branch (tried on 2015-Oct-29)
 </code></pre>
 
 <p>We need the <a href="http://ispc.github.io/">Intel SPMD compiler</a> (ISPC). We'll <a href="http://ispc.github.io/downloads.html">get</a> the Mac binary (not the AVX-512 variant - as far as I know the Mac CPU doesn't support that set of advanced vector extensions - though there is a Mac version of the code). </p>
@@ -182,6 +182,7 @@ make -j 4
 <pre><code class="bash">cd /path/to/development/paraview
 cd ParaView/Plugins
 git clone https://github.com/TACC/pvOSPRay.git
+git checkout 4.4   # Needed to correspond to ParaView 4.4
 cd ../../build
 # If there's stuff in build, delete everything there
 </code></pre>
@@ -190,9 +191,7 @@ cd ../../build
 <pre><code class="bash">    -DPARAVIEW_BUILD_PLUGIN_pvOSPRay=ON  \
 </code></pre>
 
-<p>Note that checking out and building to the <code>OSPRay</code> directory makes the build much easier. </p>
-<p>Follow the rest of the build steps. </p>
-<p>Alas, the build doesn't work with ParaView 4.4. See <a href="https://github.com/TACC/pvOSPRay/issues/24">my bug report</a>. </p></div>
+<p>Follow the rest of the build steps. </p></div>
         </div>
 
 	<footer class="col-md-12">
