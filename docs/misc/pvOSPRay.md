@@ -17,6 +17,7 @@ Get the OSPray source (note that we're changing their instructions a little to m
 ```bash
 cd $MYBASE
 git clone https://github.com/ospray/ospray.git OSPRay
+git checkout devel  # Need latest from devel branch (tried on 2015-Oct-29)
 ```
 
 We need the [Intel SPMD compiler](http://ispc.github.io/) (ISPC). We'll [get](http://ispc.github.io/downloads.html) the Mac binary (not the AVX-512 variant - as far as I know the Mac CPU doesn't support that set of advanced vector extensions - though there is a Mac version of the code). 
@@ -52,6 +53,7 @@ Now we go back to `pvOSPRay` installation.  We apparently alter some of the Para
 cd /path/to/development/paraview
 cd ParaView/Plugins
 git clone https://github.com/TACC/pvOSPRay.git
+git checkout 4.4   # Needed to correspond to ParaView 4.4
 cd ../../build
 # If there's stuff in build, delete everything there
 ```
