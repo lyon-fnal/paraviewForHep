@@ -38,6 +38,8 @@ A more simple tutorial is from Boston University at [http://www.bu.edu/tech/supp
 
 A good university course with a wealth of online material is at [http://cs.unc.edu/~taylorr/Comp715/](http://cs.unc.edu/~taylorr/Comp715/). Of special interest are a [tutorial on animation](http://cs.unc.edu/~taylorr/Comp715/ParaView3_8_1_Tutorial.html) and a course [schedule](http://cs.unc.edu/~taylorr/Comp715/schedule.html) that contains many links to resources explaining visualization concepts. 
 
+A nice overview of how Python is integrated with ParaView and VTK is at [https://github.com/scipy-conference/scipy_proceedings_2015/blob/master/papers/cory_quammen/cory_quammen.rst](https://github.com/scipy-conference/scipy_proceedings_2015/blob/master/papers/cory_quammen/cory_quammen.rst).
+
 The US Department of Defense has a large amount of information at [http://daac.hpc.mil/software/ParaView/](http://daac.hpc.mil/software/ParaView/). 
 
 Finally, the visualization group at the Argonne Leadership Computing Facility has a very good tutorial at [https://www.alcf.anl.gov/user-guides/vis-paraview-red-blood-cell-tutorial](https://www.alcf.anl.gov/user-guides/vis-paraview-red-blood-cell-tutorial) creating a complicated pipeline in ParaView. 

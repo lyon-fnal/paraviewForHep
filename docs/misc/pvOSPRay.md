@@ -2,8 +2,6 @@
 
 (Adam Lyon, October 2015, ParaView 4.4)
 
-NOTE - This does not work yet. See [my bug report](https://github.com/TACC/pvOSPRay/issues/24). [Still does not build - working on it]
-
 `pvOSPRay` is a ParaView plugin that uses the Intel OSPRay ray tracing framework. See [http://tacc.github.io/pvOSPRay/index.html](http://tacc.github.io/pvOSPRay/index.html). OSPRay is supposed to be a performant and enhanced volume rendering system. It seems to make very pretty pictures. Let's try it!
 
 ## Building
@@ -64,9 +62,5 @@ Now we run cmake as [instructed](build.md) for building ParaView, but add the fo
     -DPARAVIEW_BUILD_PLUGIN_pvOSPRay=ON  \
 ```
 
-Note that checking out and building to the `OSPRay` directory makes the build much easier. 
-
 Follow the rest of the build steps. 
-
-Alas, the build doesn't work with ParaView 4.4. See [my bug report](https://github.com/TACC/pvOSPRay/issues/24). 
 
