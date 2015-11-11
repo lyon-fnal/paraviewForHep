@@ -59,6 +59,7 @@ cd ../../build
 Now we run cmake as [instructed](build.md) for building ParaView, but add the following to the list of flags (before the last line of the `cmake` command) 
 
 ```bash
+    -DOSPRAY_BUILD_DIR=../OSPRay/build \
     -DPARAVIEW_BUILD_PLUGIN_pvOSPRay=ON  \
 ```
 
