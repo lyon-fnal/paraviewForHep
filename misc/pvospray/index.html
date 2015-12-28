@@ -78,7 +78,11 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../build/">Building from source</a>
+                            <a href="../buildv5/">Building ParaView v5 from source</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../buildv4/">Building ParaView v4 from source</a>
                         </li>
                     
                         <li class="active">
@@ -107,7 +111,7 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 <li >
-                    <a rel="next" href="../build/">
+                    <a rel="next" href="../buildv4/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
@@ -149,7 +153,7 @@
 <p><code>pvOSPRay</code> is a ParaView plugin that uses the Intel OSPRay ray tracing framework. See <a href="http://tacc.github.io/pvOSPRay/index.html">http://tacc.github.io/pvOSPRay/index.html</a>. OSPRay is supposed to be a performant and enhanced volume rendering system. It seems to make very pretty pictures. Let's try it!</p>
 <h2 id="building">Building</h2>
 <p>See <a href="http://tacc.github.io/pvOSPRay/getting_pvospray.html#source">their instructions</a> for reference to build from source. We will follow them in this section here to build it ourselves. </p>
-<p>We need to download and build <a href="https://ospray.github.io/">OSPRay</a> first. See OSPray build <a href="http://ospray.github.io/getting_ospray.html">instructions</a> for reference. We will be using the same build infrastructure we made in our <a href="../build/">ParaView build instructions</a>. So go to your <code>/path/to/development/paraview</code> directory where you have <code>ParaView</code>, <code>MPI</code>, and <code>cmake</code> ready to go and that the <code>MYBASE</code> and <code>MYMPI</code> environment variables are set as per those instructions. You do not need to have ParaView built, just checked out. MPI should be built and installed. You also need to have Qt installed on your system. </p>
+<p>We need to download and build <a href="https://ospray.github.io/">OSPRay</a> first. See OSPray build <a href="http://ospray.github.io/getting_ospray.html">instructions</a> for reference. We will be using the same build infrastructure we made in our <a href="../buildv4/">ParaView build instructions</a>. So go to your <code>/path/to/development/paraview</code> directory where you have <code>ParaView</code>, <code>MPI</code>, and <code>cmake</code> ready to go and that the <code>MYBASE</code> and <code>MYMPI</code> environment variables are set as per those instructions. You do not need to have ParaView built, just checked out. MPI should be built and installed. You also need to have Qt installed on your system. </p>
 <p>Get the OSPray source (note that we're changing their instructions a little to make building pvOSPRay easier),</p>
 <pre><code class="bash">cd $MYBASE
 git clone https://github.com/ospray/ospray.git OSPRay
@@ -187,8 +191,9 @@ cd ../../build
 # If there's stuff in build, delete everything there
 </code></pre>
 
-<p>Now we run cmake as <a href="../build/">instructed</a> for building ParaView, but add the following to the list of flags (before the last line of the <code>cmake</code> command) </p>
-<pre><code class="bash">    -DPARAVIEW_BUILD_PLUGIN_pvOSPRay=ON  \
+<p>Now we run cmake as <a href="../buildv4/">instructed</a> for building ParaView, but add the following to the list of flags (before the last line of the <code>cmake</code> command) </p>
+<pre><code class="bash">    -DOSPRAY_BUILD_DIR=../OSPRay/build \
+    -DPARAVIEW_BUILD_PLUGIN_pvOSPRay=ON  \
 </code></pre>
 
 <p>Follow the rest of the build steps. </p></div>

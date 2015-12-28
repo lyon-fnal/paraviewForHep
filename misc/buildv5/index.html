@@ -6,10 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://lyon-fnal.github.io/paraviewForHep/misc/build/">
+        <link rel="canonical" href="http://lyon-fnal.github.io/paraviewForHep/misc/buildv5/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Building from source - ParaView for High Energy Physics</title>
+	<title>Building ParaView v5 from source - ParaView for High Energy Physics</title>
 
         <link href="../../css/bootstrap-3.0.3.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -78,7 +78,11 @@
                     <ul class="dropdown-menu">
                     
                         <li class="active">
-                            <a href="./">Building from source</a>
+                            <a href="./">Building ParaView v5 from source</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../buildv4/">Building ParaView v4 from source</a>
                         </li>
                     
                         <li >
@@ -112,7 +116,7 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../pvospray/">
+                    <a rel="prev" href="../buildv4/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -137,6 +141,8 @@
     
         <li class="main active"><a href="#building-from-source">Building from source</a></li>
         
+            <li><a href="#note">Note</a></li>
+        
             <li><a href="#obtaining-paraview-source">Obtaining ParaView Source</a></li>
         
             <li><a href="#installing-qt">Installing Qt</a></li>
@@ -153,12 +159,18 @@
             <div class="col-md-9" role="main">
 
 <h1 id="building-from-source">Building from source</h1>
-<p>(Adam Lyon, October 2015, ParaView 4.4)</p>
+<p>(Adam Lyon, December 2015, ParaView 5)</p>
+<p><em>THIS PAGE IS IN PROGRESS - DO NOT FOLLOW</em></p>
 <p>While binaries of the ParaView application are available at <a href="http://www.paraview.org">http://www.paraview.org</a>, you may find that you need to build ParaView from source yourself. A build from source will be required if you want to have a special non-default build option turned on or off, build against a different Open MPI library, or want the latest changes in ParaView from git. Otherwise, you should definitely use the pre-compiled binaries as described in <a href="../../intro/intro/#obtaining-paraview">Obtaining ParaView</a>.</p>
+<h2 id="note">Note</h2>
+<p>The instructions here are to build ParaView 4.4. This version is no longer the latest and so we'll explicitly check out version 4.4 below. To build ParaView v5, see <a href="../buildv5">BuildV5</a>.</p>
 <h2 id="obtaining-paraview-source">Obtaining ParaView Source</h2>
 <p>See <a href="https://gitlab.kitware.com/paraview/paraview/blob/master/Documentation/dev/git/download.md">https://gitlab.kitware.com/paraview/paraview/blob/master/Documentation/dev/git/download.md</a> for information on how to <code>git clone</code> the ParaView repository. A summary is,</p>
 <pre><code class="bash">cd /path/to/development/paraview
 git clone --recursive https://gitlab.kitware.com/paraview/paraview.git ParaView
+cd ParaView
+git checkout v4.4.0
+git submodule update --init
 # Your source code will be in /path/to/development/paraview/ParaView
 </code></pre>
 
